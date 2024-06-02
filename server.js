@@ -12,13 +12,17 @@ app.get('/', function (req, res) {
   res.send('Hello World')
 })
 
-
-
+// Import the person routes
 const personRoutes = require('./routes/personRoutes');
+
+// Import the menu routes
 const menuRoutes = require('./routes/menuRoutes');
 
-app.use('/person',personRoutes);
-app.use('/menu',menuRoutes);
+// Use the person routes for requests to /person
+app.use('/person', personRoutes);
+
+// Use the menu routes for requests to /menu
+app.use('/menu', menuRoutes);
 
 
 app.listen(3000, ()=>{
